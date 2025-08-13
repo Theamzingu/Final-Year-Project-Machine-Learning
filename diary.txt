@@ -1,0 +1,121 @@
+Oct 18th 2024
+	I started a bit late with my whole project, today I started a more in depth research for my project. I saw a few implementations for pacman 
+    and compared their similarities and differences. Many implementations are terminal based instead of having a GUI.
+
+Oct 24th 2024
+	“Studied” the ghosts of pacman to understand their behaviour based on the code that others had written in their implementations. I noticed 
+    that most of the implementations of the ghost were identical, which makes sense if you consider that the ghosts actually move deterministically 
+    and the game would not be pacman if the ghost behaviour was different.
+
+Oct 30th 2024
+	Started researching the A* algorithm and its basic theory. I read a page that explained the algorithm very well saying it's a combination of 
+    dijkstra's and greedy breadth first search. I knew both algorithms that are used but I had to freshen up my mind so I searched bothe dijkstas 
+    and breadth first search. I then continued reading on A*.
+
+Nov 17th 2024
+	I just started working on my code for the game, I started a bit late due to coursework from another module, regardless I wrote as much code as 
+    I could and ended up writing a vectors file, a pacman file and a nodes file more notably. The nodes were not a proper map of the game they are 
+    plotted just to make sure that the functions worked properly
+
+Nov 18th 2024
+	Pacman can now move on all nodes, I also added functionality where he can change directions while moving towards another node. Initially I made 
+    a very small map and connected the nodes with a function instead of doing it manually by “hard coding” it. After making sure that it was functioning 
+    as intended I made the full pacman map. As the full pacman map has portals I also made the functionality for pacman traveling through the portals. 
+    Now that the map was traversable I moved on to making the pellets. I changed the map file I had to accommodate pellets and also wrote the code for the 
+    functionality of the pellets. I was about to start coding the ghosts but noticed that a lot of code that was used in coding the ghosts was also in use for pacman, 
+    so instead i created a new file that housed all common functionality. Added the ghosts shortly after and made them move randomly on the map.
+
+Nov 19th 2024
+	I added the “scatter” and “chase” functionality to the ghosts so now for a set amount of time the ghosts will chase pacman around the map and after the timer is up 
+    they will scatter to a specific location on the map that is different for each ghost and this process repeats. I added the ghost starting area in the middle of the 
+    map where ghosts will be rendered at the start of the game, I also added fright mode, when pacman consumes a power pellet the ghosts enter fright mode where they flee 
+    from pacman in random directions.
+
+Nov 20th 2024
+	Ghosts now start from the middle. Added fruits to the game for extra points. Added pausing to the game so pacman does not start instantly anymore. Added a simple 
+    level counter where after the board is fully cleared the counter goes up. Pacman now dies if he touches any of the ghosts. I also added conditions for the ghosts to be 
+    released, where two ghosts are released instantly and the other two are released based on the pellets pacman has eaten.
+
+Nov 21st 2024
+	Made text where if the game is Paused there would be text. There is a ready text at the beginning of the game, and a gameover screen when pacman dies. 
+    Additionally I fixed a bug where if pacman died when you restart the game his speed would be halved.
+
+Nov 22nd 2024
+	Used a sprite sheet to make sprites for the ghosts pacman and the fruit. I also added the life sprites to indicate how many lives are left
+
+Nov 23rd 2024
+	Used the sprite sheet to make the borders of the map and the walls inside the playing area. Sadly the map and nodes were misaligned. For the next 
+    few hours I moved the nodes around to align them with the map but that caused the game to crash. As I was feeling frustrated I stopped and am hoping 
+    to have this solved by tomorrow.
+
+Nov 24th 2024
+	I looked at the code again today to try and figure out why it was not working but I could not pinpoint why it was not working. After a couple hours 
+    of mindlessly staring into my screen I decided to just close it down and pick it up again tomorrow.
+
+Nov 25th 2024
+	After having a chat with some friends the night before about the issue I am facing, one of them mentioned why not just move the map to align with 
+    the nodes. A simple solution which completely went over my head. After doing so everything worked like a charm. To the pacman and ghost sprites I added 
+    the animations where ghosts change the direction they are facing based on where they are moving and also did the same thing with pacman, I also added the 
+    animation of pacman opening and closing his mouth. Additionally I added the pacman death animation.
+
+Nov 26th 2024
+    Made some small changes where the map now changes color when moving up a level and fruits now give more points based on the level you are on.
+
+Dec 7th 2024
+	Coded the A* algorithm and used it very primitively on pacman to pathfind to a node specified by me. After that the controls are 
+    given back to the user. To do this I also made the movements of the ghosts to be stored in order for pacman to avoid them.
+
+Dec 8th 2024
+	I made pacman play the game and use the stored ghost movement to avoid them. But pacman did not avoid the ghosts and just ran into them. 
+    I made a few changes to the heuristic and the A* code that improved pathfinding slightly but still ran into ghosts.
+
+Dec 9th 2024
+	Continued debugging but I could not improve the state of the game at all
+
+Jan 24th 2025
+    did some research on machine learning Libraries such as tensorflow, pytorch, scikit-learn.
+
+Jan 25th 2025
+    decided to work on my project using tensorflow, I have found some online tutorials for using tensorflow and have started setting up the enviornment in a ubutu enviornment
+    using wsl
+
+Jan 30th 
+    failed to get tensorflow enviornment working so i decided to try to use pytorch, again i have found a few tutorials on how to setup pytorch and a few mini projects.
+
+Feb 7th
+    after working on the mini projects i have started to work on my project, and I have ran into some problems regarding my pacman code and stored data.
+
+Feb 22nd
+    after a break to do my other coursework I have come back and finished fixing the pacman code and how it is stored
+
+Feb 24th
+    I have started writing the Neural network code with guidance from the mini projects. 
+
+Feb 27th
+    I have finished writing the neural network and have but have ran into issues where I couln't send the tensordict to my GPU for training
+
+Mar 3rd
+    I have now fixed the issue with the GPU and have started training on a 3 layer model with 128 nodes.
+
+Mar 7th
+    after 4 days of training I have noticed that the network does not learn any furthur and is just repeating failed moves, as a result i have changed the network to a
+    4 layer network with 512 nodes moving down to 256 and then 128
+
+Mar 14th
+    after a week of training the network again has ran into a wall where it is not learning any furthur and is doing the same wrong moves over and over again.
+    I changed the learning rate maybe that might help it learn better
+
+Mar 21st
+    after another week of training the model ran into the same problem I have noticed that the 3 layer model learned better and was getting futhur than the 4 layer one so
+    i tried to reduce the layers. now I have a 2 layer model with 1 hidden layer and the output layer with 128 nodes.
+
+Mar 24th
+    Still training the network but have started working on my report.
+
+Mar 28th 
+    I've read somewhere that the network might need to reach 50k episodes before showing any promising results and after a week it has reached only 20k so I will leave it
+    working for another week and hopefully see some results. in the mean time im working on my report
+
+Apr 4th
+    after two weeks of training i have not seen any improvement so i have decided to stop training the model and just focus on my report since the deadline is in one week
+    I have no clue why it is not working and I cant find any guidance. on the bright side my report is moving forward smoothly
