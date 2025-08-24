@@ -433,7 +433,7 @@ n_observations = 279
 net = DQN(n_observations, n_actions).to(device)
 
 checkpoint = torch.load(
-    'model_training_checkpoints/checkpoint_38000.tar',
+    'model_training_checkpoints/checkpoint_6000.tar',
     weights_only=False,
     map_location=device,
 )
